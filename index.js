@@ -12,5 +12,19 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  // Use map to create a new array of title-cased tutorial names
+  return tutorials.map((tutorial) => {
+    // Split into words
+    const words = tutorial.split(' ');
+
+    // Capitalize the first letter of each word and join them
+    const titleCasedTutorial = words.map((word) => {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+    return titleCasedTutorial;
+  });
 }
+// Call the titleCased function
+const result = titleCased();
+// Output the result
+console.log(result);
